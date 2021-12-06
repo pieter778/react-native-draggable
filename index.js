@@ -2,5 +2,10 @@
 'use strict';
 
 import Draggable from './Draggable';
+import React from 'react';
 
-export default Draggable;
+function shouldNotUpdate(prevProps, nextProps){
+    return true;
+  }
+
+export default React.memo(Draggable, shouldNotUpdate);
