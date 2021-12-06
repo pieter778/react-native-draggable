@@ -283,6 +283,12 @@ export default function Draggable(props) {
   );
 }
 
+function shouldNotUpdate(prevProps, nextProps){
+  return true;
+}
+
+export default React.memo(Draggable, shouldNotUpdate);
+
 /***** Default props and types */
 
 Draggable.defaultProps = {
