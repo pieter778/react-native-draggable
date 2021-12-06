@@ -56,7 +56,7 @@ interface IProps {
     maxY?: number;
   };
 
-export default function Draggable(props: IProps) {
+function Draggable(props: IProps) {
   const {
     renderText,
     isCircle,
@@ -314,6 +314,12 @@ export default function Draggable(props: IProps) {
     </View>
   );
 }
+ 
+function shouldNotUpdate(prevProps, nextProps){
+  return true;
+}
+
+export default React.memo(Draggable, shouldNotUpdate);
 
 /***** Default props and types */
 
